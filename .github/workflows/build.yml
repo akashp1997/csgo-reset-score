@@ -39,6 +39,6 @@ jobs:
           tar xfz sourcemod.tar.gz
           cd addons/sourcemod/scripting
           chmod +x spcomp
-          chmod +x spcomp.x
+          chmod +x spcomp64
           chmod +x compile.sh
           ./compile.sh reset-score.sp
