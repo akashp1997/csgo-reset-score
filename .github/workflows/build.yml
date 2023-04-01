@@ -60,5 +60,6 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: true
           title: "Development build"
+          automatic_release_tag: "dev_latest"
           files: |
             addons/sourcemod/scripting/compiled/reset-score.smx
