@@ -1,6 +1,8 @@
 #include <sourcemod>
 #include <cstrike>
-#include <colors>
+#include <morecolors>
+
+#pragma semicolon 1
 
 ConVar IsPluginEnabled = null;
 ConVar ResetShowToAll = null;
@@ -15,7 +17,7 @@ public Plugin myinfo = {
 
 public void OnPluginStart(){
 	IsPluginEnabled = CreateConVar("sm_resetscore_enabled", "1", "Enable/disable reset score plugin", FCVAR_PROTECTED, true, 0.0, true, 1.0);
-	ResetShowToAll = CreateConVar("sm_resetscore_showall", "1", "Print to all when any player resets score", FCVAR_PROTECTED, true, 0.0, true, 1.0)
+	ResetShowToAll = CreateConVar("sm_resetscore_showall", "1", "Print to all when any player resets score", FCVAR_PROTECTED, true, 0.0, true, 1.0);
 
 	// HookEvent("round_start", OnRoundStart, EventHookMode_PostNoCopy); 
 	HookConVarChange(IsPluginEnabled, PluginStatusChanged);
