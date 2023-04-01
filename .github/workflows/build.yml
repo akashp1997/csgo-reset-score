@@ -32,6 +32,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Reset score
         uses: actions/checkout@v3
+        with:
+          path: csgo_reset_score
       
       - name: Checkout smlib
         uses: actions/checkout@v3
@@ -45,10 +47,8 @@ jobs:
         run: |
           curl -L "$SMPACKAGE_URL_PREFIX${SMVERSION}" --output sourcemod.tar.gz
           tar xfz sourcemod.tar.gz
-          echo "$GITHUB_WORKSPACE"
-          ls -la
-          cp smlib/scripting/include/* addons/sourcemod/scripting/include
-          cp *.sp addons/sourcemod/scripting/
+          cp smlib/scripting/include/* addons/sourcemod/scripting/include -r
+          cp csgo_reset_score/*.sp addons/sourcemod/scripting/ -r
           cd addons/sourcemod/scripting
           chmod +x spcomp
           chmod +x spcomp64
