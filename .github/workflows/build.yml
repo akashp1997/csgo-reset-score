@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Build plugin
 
 env:
   SMVERSION: 1.11
@@ -54,3 +54,9 @@ jobs:
           chmod +x spcomp64
           chmod +x compile.sh
           ./compile.sh reset-score.sp
+      
+      - name: 'Upload Plugin'
+        uses: actions/upload-artifact@v3
+        with:
+          name: csgo-reset-score
+          path: addons/sourcemod/scripting/compiled/reset-score.smx
