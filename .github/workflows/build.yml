@@ -47,7 +47,7 @@ jobs:
         run: |
           curl -L "$SMPACKAGE_URL_PREFIX${SMVERSION}" --output sourcemod.tar.gz
           tar xfz sourcemod.tar.gz
-          cp smlib/scripting/include/* addons/sourcemod/scripting/include -r
+          cp smlib/scripting/include/* addons/sourcemod/scripting/include/ -r
           cp csgo_reset_score/*.sp addons/sourcemod/scripting/ -r
           cd addons/sourcemod/scripting
           chmod +x spcomp
